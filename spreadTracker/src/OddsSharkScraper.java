@@ -91,6 +91,6 @@ public class OddsSharkScraper {
 
     public static void main(String[] args) throws Exception {
         OddsSharkScraper scraper = new OddsSharkScraper();
-        scraper.getScoreBoard(2014, 10);
+        System.out.println(scraper.getScoreBoard(2017, 10).isComplete());
     }
 }

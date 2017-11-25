@@ -15,6 +15,7 @@ public class Game implements Serializable {
     String homeName;
     String homeCity;
     String homeNick;
+    String homeInitials;
     double homeSpread;
     int homeScore;
     char homeSpreadRe;
@@ -23,6 +24,7 @@ public class Game implements Serializable {
     String awayName;
     String awayCity;
     String awayNick;
+    String awayInitials;
     double awaySpread;
     int awayScore;
     char awaySpreadRe;
@@ -57,17 +59,21 @@ public class Game implements Serializable {
         Matcher m = p.matcher(html);
         m.find();
         homeCity = m.group(1);
-        System.out.println(homeCity);
         m.find();
         awayCity = m.group(1);
 
-        // Sets home/awayNick
-        p = Pattern.compile("nick-name\">([^<]+)");
+        // Sets home/awayInitials
+        p = Pattern.compile("(?<!t\")>([A-Z]{2,3})<");
         m = p.matcher(html);
+        System.out.println(html);
         m.find();
-        homeNick = retNick(homeCity);
+        homeInitials = m.group(1);
         m.find();
-        awayNick = retNick(awayCity);
+        awayInitials = m.group(1);
+
+        // Sets home/awayNick
+        homeNick = retNick(homeInitials);
+        awayNick = retNick(awayInitials);
 
         // Sets home/awayName
         homeName = homeCity + " " + homeNick;
@@ -142,6 +148,7 @@ public class Game implements Serializable {
         Matcher m = p.matcher(html);
         m.find();
         status = m.group(1);
+
         return m.group(1).equals("final");
 
     }
@@ -162,38 +169,41 @@ public class Game implements Serializable {
 
     String retNick(String homeCity) {
         switch (homeCity) {
-            case "Arizona" : return "Cardinals";
-            case "Atlanta" : return "Falcons";
-            case "Baltimore" : return "Ravens";
-            case "Buffalo" : return "Bills";
-            case "Carolina" : return "Panthers";
-            case "Chicago" : return "Bears";
-            case "Cincinnati" : return "Bengals";
-            case "Cleveland" : return "Browns";
-            case "Dallas" : return "Cowboys";
-            case "Denver" : return "Broncos";
-            case "Detroit" : return "Lions";
-            case "Green Bay" : return "Packers";
-            case "Houston" : return "Texans";
-            case "Indianapolis" : return "Colts";
-            case "Jacksonville" : return "Jaguars";
-            case "Kansas City" : return "Chiefs";
-            case "Los Angeles" : return "Rams";
-            case "Los Angeles" : return "Chargers";
-            case "Miami" : return "Dolphins";
-            case "Minnesota" : return "Vikings";
-            case "New England" : return "Patriots";
-            case "New Orleans" : return "Saints";
-            case "New York" : return "Giants";
-            case "New York" : return "Jets";
-            case "Oakland" : return "Raiders";
-            case "Philadelphia" : return "Eagles";
-            case "Pittsburgh" : return "Steelers";
-            case "San Francisco" : return "49ers";
-            case "Seattle" : return "Seahawks";
-            case "Tampa Bay" : return "Buccaneers";
-            case "Tennessee" : return "Titans";
-            case "Washington" : return "Redskins";
+            case "ARI" : return "Cardinals";
+            case "ATL" : return "Falcons";
+            case "BAL" : return "Ravens";
+            case "BUF" : return "Bills";
+            case "CAR" : return "Panthers";
+            case "CHI" : return "Bears";
+            case "CIN" : return "Bengals";
+            case "CLE" : return "Browns";
+            case "DAL" : return "Cowboys";
+            case "DEN" : return "Broncos";
+            case "DET" : return "Lions";
+            case "GB" : return "Packers";
+            case "HOU" : return "Texans";
+            case "IND" : return "Colts";
+            case "JAC" : return "Jaguars";
+            case "KC" : return "Chiefs";
+            case "LAR" : return "Rams";
+            case "LAC" : return "Chargers";
+            case "MIA" : return "Dolphins";
+            case "MIN" : return "Vikings";
+            case "NE" : return "Patriots";
+            case "NO" : return "Saints";
+            case "NYG" : return "Giants";
+            case "NYJ" : return "Jets";
+            case "OAK" : return "Raiders";
+            case "PHI" : return "Eagles";
+            case "PIT" : return "Steelers";
+            case "SD" : return "Chargers";
+            case "SF" : return "49ers";
+            case "SEA" : return "Seahawks";
+            case "STL" : return "Rams";
+            case "TB" : return "Buccaneers";
+            case "TEN" : return "Titans";
+            case "WAS" : return "Redskins";
+            default: throw new RuntimeException("Initials not recognized");
         }
 
     }

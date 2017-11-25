@@ -34,7 +34,7 @@ public class SpreadResults {
         // Creates folder for and updates seasons
         System.out.println("Checking season folders");
         LocalDate date = LocalDate.now();
-        for (int curSeason = getSeasonYear(date); curSeason > 2010; curSeason--) {
+        for (int curSeason = getSeasonYear(date); curSeason > 2014; curSeason--) {
             File season = new File(spreadData.getPath() + "/" + String.valueOf(curSeason));
 
             if (!season.exists()) {
