@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -32,7 +33,7 @@ public class OddsSharkScraper {
 
         do {
             // Clicks and opens calendar spin selector
-            driver.findElement(By.id("scoreboard-date-navigation")).findElement(By.className("os-spin-selector")).click();
+            driver.findElement(By.className("os-spin-selector")).click();
 
             // Sets current season to initial position of spin selector
             curSeason = driver.findElement(By.cssSelector(".spin-value.active")).getText();
@@ -55,21 +56,6 @@ public class OddsSharkScraper {
         waitUntilLoaded();
     }
 
-    private void goToItem(int position) {
-        // Selects week/index slider as element
-        WebElement slider = driver.findElement(By.id("gc-scoreboard")).findElement(By.cssSelector(".list.slidee"));
-        WebElement item = slider.findElement(By.xpath("li[" + position + "]"));
-
-        System.out.println("Navigating slider until item " + position + " is visible");
-        int i = -45 + (position * 45);
-        driver.executeScript("document.getElementsByClassName('slidee')[1].style.transform = \"translateX(-" + i + "px)\";");
-        System.out.print("px" + i + " ");
-        System.out.println("Found item " + position + "... attempting to load new scoreboard");
-
-        item.click();
-        waitUntilLoaded();
-    }
-
     private void waitUntilLoaded() {
         System.out.print("Loading Scoreboard... ");
         WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -77,6 +63,29 @@ public class OddsSharkScraper {
         wait.until(ExpectedConditions.attributeToBe(oslive, "class", "scoreboard"));
 
         System.out.println("Scoreboard loaded!");
+    }
+
+    private void goToItem(int position) {
+        int tries = 0;
+        while (true) {
+            try {
+                // Selects week/index slider as element
+                WebElement slider = driver.findElement(By.id("gc-scoreboard")).findElement(By.cssSelector(".list.slidee"));
+                WebElement item = slider.findElement(By.xpath("li[" + position + "]"));
+
+                System.out.println("Navigating slider until item " + position + " is visible");
+                int i = -45 + (position * 45);
+                driver.executeScript("document.getElementsByClassName('slidee')[1].style.transform = \"translateX(-" + i + "px)\";");
+                System.out.print("px" + i + " ");
+                System.out.println("Found item " + position + "... attempting to load new scoreboard");
+
+                item.click();
+                waitUntilLoaded();
+                break;
+            } catch (ElementNotVisibleException e) {
+                if (tries == 3) throw e;
+            }
+        }
     }
 
     public Scoreboard getScoreBoard(int season, int position) {

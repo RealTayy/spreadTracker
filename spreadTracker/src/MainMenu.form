@@ -1,13 +1,650 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainMenu">
-  <grid id="27dc6" row-count="1" column-count="1" layout-manager="GridLayoutManager">
+  <grid id="27dc6" binding="mainPane" layout-manager="GridLayoutManager" row-count="4" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
-      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+      <xy x="20" y="20" width="1000" height="800"/>
     </constraints>
-    <properties/>
-    <border type="none"/>
-    <children/>
+    <properties>
+      <inheritsPopupMenu value="false"/>
+      <maximumSize width="1000" height="800"/>
+      <minimumSize width="1000" height="800"/>
+    </properties>
+    <border type="none" title=""/>
+    <children>
+      <grid id="bef13" binding="gameExclusions" layout-manager="GridLayoutManager" row-count="9" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="441" height="377"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="8627c" class="javax.swing.JCheckBox" binding="ARICardinalsCheckBox" default-binding="true">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="ARI Cardinals"/>
+            </properties>
+          </component>
+          <component id="69db1" class="javax.swing.JCheckBox" binding="DALCowboysCheckBox" default-binding="true">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="DAL Cowboys"/>
+            </properties>
+          </component>
+          <component id="cb13" class="javax.swing.JCheckBox" binding="MIADolphinsCheckBox" default-binding="true">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="MIA Dolphins"/>
+            </properties>
+          </component>
+          <component id="a4ae6" class="javax.swing.JCheckBox" binding="DENBroncosCheckBox" default-binding="true">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="DEN Broncos"/>
+            </properties>
+          </component>
+          <component id="65b6a" class="javax.swing.JCheckBox" binding="DETLionsCheckBox" default-binding="true">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="DET Lions"/>
+            </properties>
+          </component>
+          <component id="df801" class="javax.swing.JCheckBox" binding="ATLFalconsCheckBox">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="ATL Falcons"/>
+            </properties>
+          </component>
+          <component id="3f23a" class="javax.swing.JCheckBox" binding="BALRavensCheckBox">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="BAL Ravens"/>
+            </properties>
+          </component>
+          <component id="906ae" class="javax.swing.JCheckBox" binding="GBPackersCheckBox" default-binding="true">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="GB Packers"/>
+            </properties>
+          </component>
+          <component id="1e7b9" class="javax.swing.JCheckBox" binding="HOUTexansCheckBox" default-binding="true">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="HOU Texans"/>
+            </properties>
+          </component>
+          <component id="16ee3" class="javax.swing.JCheckBox" binding="INDColtsCheckBox" default-binding="true">
+            <constraints>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="IND Colts"/>
+            </properties>
+          </component>
+          <component id="15c9b" class="javax.swing.JCheckBox" binding="JACJaguarsCheckBox" default-binding="true">
+            <constraints>
+              <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="JAC Jaguars"/>
+            </properties>
+          </component>
+          <component id="8da88" class="javax.swing.JCheckBox" binding="KCChiefsCheckBox" default-binding="true">
+            <constraints>
+              <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="KC Chiefs"/>
+            </properties>
+          </component>
+          <component id="36f19" class="javax.swing.JCheckBox" binding="BUFBillsCheckBox">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="BUF Bills"/>
+            </properties>
+          </component>
+          <component id="a0b5b" class="javax.swing.JCheckBox" binding="CARPanthersCheckBox">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="CAR Panthers"/>
+            </properties>
+          </component>
+          <component id="aa0e6" class="javax.swing.JCheckBox" binding="CHIBearsCheckBox">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="CHI Bears"/>
+            </properties>
+          </component>
+          <component id="20545" class="javax.swing.JCheckBox" binding="CINBengalsCheckBox">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="CIN Bengals"/>
+            </properties>
+          </component>
+          <component id="b6e93" class="javax.swing.JCheckBox" binding="CLEBrownsCheckBox">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="CLE Browns"/>
+            </properties>
+          </component>
+          <component id="63eed" class="javax.swing.JCheckBox" binding="PITSteelersCheckBox">
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="PIT Steelers"/>
+            </properties>
+          </component>
+          <component id="bd086" class="javax.swing.JCheckBox" binding="SDChargersCheckBox">
+            <constraints>
+              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="SD Chargers"/>
+            </properties>
+          </component>
+          <component id="37d62" class="javax.swing.JCheckBox" binding="SF49ersCheckBox">
+            <constraints>
+              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="SF 49ers"/>
+            </properties>
+          </component>
+          <component id="f75cb" class="javax.swing.JCheckBox" binding="SEASeahawksCheckBox">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="SEA Seahawks"/>
+            </properties>
+          </component>
+          <component id="7b7b7" class="javax.swing.JCheckBox" binding="STLRamsCheckBox">
+            <constraints>
+              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="STL Rams"/>
+            </properties>
+          </component>
+          <component id="2da82" class="javax.swing.JCheckBox" binding="TBBuccaneersCheckBox">
+            <constraints>
+              <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="TB Buccaneers"/>
+            </properties>
+          </component>
+          <component id="a806d" class="javax.swing.JCheckBox" binding="TENTitansCheckBox">
+            <constraints>
+              <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="TEN Titans"/>
+            </properties>
+          </component>
+          <component id="ceb61" class="javax.swing.JCheckBox" binding="WASRedskinsCheckBox">
+            <constraints>
+              <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="WAS Redskins"/>
+            </properties>
+          </component>
+          <component id="7ac44" class="javax.swing.JCheckBox" binding="PHIEaglesCheckBox">
+            <constraints>
+              <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="PHI Eagles"/>
+            </properties>
+          </component>
+          <component id="9ad03" class="javax.swing.JCheckBox" binding="OAKRaidersCheckBox">
+            <constraints>
+              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="OAK Raiders"/>
+            </properties>
+          </component>
+          <component id="c3016" class="javax.swing.JCheckBox" binding="NYJJetsCheckBox">
+            <constraints>
+              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="NYJ Jets"/>
+            </properties>
+          </component>
+          <component id="3edf" class="javax.swing.JCheckBox" binding="NYGGiantsCheckBox">
+            <constraints>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="NYG Giants"/>
+            </properties>
+          </component>
+          <component id="7923e" class="javax.swing.JCheckBox" binding="NOSaintsCheckBox">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="NO Saints"/>
+            </properties>
+          </component>
+          <component id="f3167" class="javax.swing.JCheckBox" binding="NEPatriotsCheckBox">
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="NE Patriots"/>
+            </properties>
+          </component>
+          <component id="ee550" class="javax.swing.JCheckBox" binding="MINVikingsCheckBox">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="MIN Vikings"/>
+            </properties>
+          </component>
+          <component id="f6026" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Exclude games that have these teams"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="c870" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="157" height="16"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Excluded Games"/>
+        </properties>
+      </component>
+      <grid id="e0c0e" layout-manager="GridLayoutManager" row-count="5" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="67b84" class="javax.swing.JCheckBox" binding="homeOnlyCheckBox" default-binding="true">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Home only"/>
+            </properties>
+          </component>
+          <component id="e9bf1" class="javax.swing.JCheckBox" binding="excludeHOFGamesCheckBox" default-binding="true">
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Exclude HOF games"/>
+            </properties>
+          </component>
+          <component id="a40e5" class="javax.swing.JCheckBox" binding="excludeRegSeasonCheckBox">
+            <constraints>
+              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Exclude Reg Season"/>
+            </properties>
+          </component>
+          <component id="645e9" class="javax.swing.JCheckBox" binding="spreadCondition">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="130" height="24"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Spread must be"/>
+            </properties>
+          </component>
+          <component id="e41a6" class="javax.swing.JCheckBox" binding="excludePreSeasonCheckBox">
+            <constraints>
+              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Exclude Pre Season"/>
+            </properties>
+          </component>
+          <component id="b2dae" class="javax.swing.JCheckBox" binding="excludePostSeasonCheckBox">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Exclude Post Season"/>
+            </properties>
+          </component>
+          <component id="96171" class="javax.swing.JCheckBox" binding="overUnderCondition">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="130" height="24"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="O/U must be"/>
+            </properties>
+          </component>
+          <component id="13824" class="javax.swing.JTextField" binding="spreadCondValue">
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="30" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="8cca2" class="javax.swing.JTextField" binding="ouCondValue">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="30" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="5d9a6" class="javax.swing.JComboBox" binding="spreadCondCBox">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="57" height="26"/>
+              </grid>
+            </constraints>
+            <properties>
+              <model/>
+            </properties>
+          </component>
+          <component id="5962f" class="javax.swing.JComboBox" binding="ouCondCBox">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="57" height="26"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="6721b" class="javax.swing.JComboBox" binding="curTeamCBox">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="d23a1" class="javax.swing.JTextField">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="4" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="110" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+              <focusable value="false"/>
+              <text value="Team to evaluate:"/>
+            </properties>
+          </component>
+          <component id="73326" class="javax.swing.JCheckBox" binding="awayOnlyCheckBox">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Away only"/>
+            </properties>
+          </component>
+          <component id="ba886" class="javax.swing.JCheckBox" binding="seasonLimitedCheckBox" default-binding="true">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Season Limited"/>
+            </properties>
+          </component>
+          <component id="3a321" class="javax.swing.JComboBox" binding="seasonCondCBox">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="57" height="26"/>
+              </grid>
+            </constraints>
+            <properties>
+              <model/>
+            </properties>
+          </component>
+          <component id="f40f" class="javax.swing.JTextField" binding="seasonTextField">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="30" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+        </children>
+      </grid>
+      <grid id="31637" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="fdc39" class="javax.swing.JButton" binding="fetchResults">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Click here to get results!"/>
+            </properties>
+          </component>
+          <component id="9c3be" class="javax.swing.JTextArea" binding="currentStatus">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="955af" class="javax.swing.JButton" binding="clearResultsButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Clear Results"/>
+            </properties>
+          </component>
+          <component id="bad24" class="javax.swing.JButton" binding="testButton">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Test"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="fe878" layout-manager="GridLayoutManager" row-count="2" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="1" row-span="3" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="800" height="300"/>
+            <preferred-size width="800" height="300"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="ff789" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Win"/>
+            </properties>
+          </component>
+          <component id="a117c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Lose"/>
+            </properties>
+          </component>
+          <component id="b66c3" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Push"/>
+            </properties>
+          </component>
+          <scrollpane id="1a7c1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="210" height="34"/>
+                <preferred-size width="210" height="34"/>
+              </grid>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <enabled value="false"/>
+              <horizontalScrollBarPolicy value="32"/>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="6135e" class="javax.swing.JTextArea" binding="winGamesArea">
+                <constraints/>
+                <properties>
+                  <editable value="false"/>
+                  <focusable value="true"/>
+                  <minimumSize width="200" height="50"/>
+                  <preferredSize width="200" height="50"/>
+                  <rows value="2"/>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+          <scrollpane id="fbfb3">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="210" height="34"/>
+                <preferred-size width="210" height="34"/>
+              </grid>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <enabled value="false"/>
+              <horizontalScrollBarPolicy value="32"/>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="c1237" class="javax.swing.JTextArea" binding="loseGamesArea">
+                <constraints/>
+                <properties>
+                  <editable value="false"/>
+                  <focusable value="true"/>
+                  <minimumSize width="200" height="50"/>
+                  <preferredSize width="200" height="50"/>
+                  <rows value="2"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+          <scrollpane id="c4887">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="210" height="34"/>
+                <preferred-size width="210" height="34"/>
+              </grid>
+            </constraints>
+            <properties>
+              <autoscrolls value="true"/>
+              <enabled value="false"/>
+              <horizontalScrollBarPolicy value="32"/>
+              <verticalScrollBarPolicy value="22"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="13cd1" class="javax.swing.JTextArea" binding="pushGamesArea">
+                <constraints/>
+                <properties>
+                  <editable value="false"/>
+                  <focusable value="true"/>
+                  <minimumSize width="200" height="50"/>
+                  <preferredSize width="200" height="50"/>
+                  <rows value="2"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </grid>
+      <scrollpane id="765d9">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="210" height="34"/>
+            <preferred-size width="210" height="34"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="false"/>
+          <horizontalScrollBarPolicy value="32"/>
+          <verticalScrollBarPolicy value="22"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="1cc06" class="javax.swing.JTextArea" binding="exGamesArea">
+            <constraints/>
+            <properties>
+              <autoscrolls value="false"/>
+              <columns value="30"/>
+              <dragEnabled value="false"/>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <focusable value="true"/>
+              <minimumSize width="200" height="50"/>
+              <rows value="2"/>
+              <wrapStyleWord value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+    </children>
   </grid>
 </form>

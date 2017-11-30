@@ -3,36 +3,36 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Game implements Serializable {
-    String html;
-    Boolean complete = false;
-    String status;
+    private String html;
+    private Boolean complete = false;
+    private String status;
 
-    int season;
-    int position;
-    int week;
-    String type;
+    private int season;
+    private int position;
+    private int week;
+    private String type;
 
-    String homeName;
-    String homeCity;
-    String homeNick;
-    String homeInitials;
-    double homeSpread;
-    int homeScore;
-    char homeSpreadRe;
-    char homeScoreRe;
+    private String homeName;
+    private String homeCity;
+    private String homeNick;
+    private String homeInitials;
+    private double homeSpread;
+    private int homeScore;
+    private char homeSpreadRe;
+    private char homeScoreRe;
 
-    String awayName;
-    String awayCity;
-    String awayNick;
-    String awayInitials;
-    double awaySpread;
-    int awayScore;
-    char awaySpreadRe;
-    char awayScoreRe;
+    private String awayName;
+    private String awayCity;
+    private String awayNick;
+    private String awayInitials;
+    private double awaySpread;
+    private int awayScore;
+    private char awaySpreadRe;
+    private char awayScoreRe;
 
-    int totalScore;
-    Double overUnderSpread;
-    char overUnderResult;
+    private int totalScore;
+    private double overUnderSpread;
+    private char overUnderResult;
 
     public Game(String html, int season, int position, int week, String type) {
         this.html = html;
@@ -45,15 +45,14 @@ public class Game implements Serializable {
         if (isComplete()) {
             extractInfo();
         }
-
     }
 
-    void extractInfo() {
+    private void extractInfo() {
         extractTeams();
         extractResults();
     }
 
-    void extractTeams() {
+    private void extractTeams() {
         // Sets home/awayCity
         Pattern p = Pattern.compile("city\">([^<]+)");
         Matcher m = p.matcher(html);
@@ -65,7 +64,6 @@ public class Game implements Serializable {
         // Sets home/awayInitials
         p = Pattern.compile("(?<!t\")>([A-Z]{2,3})<");
         m = p.matcher(html);
-        System.out.println(html);
         m.find();
         homeInitials = m.group(1);
         m.find();
@@ -80,7 +78,7 @@ public class Game implements Serializable {
         awayName = awayCity + " " + awayNick;
     }
 
-    void extractResults() {
+    private void extractResults() {
         // Sets home/awaySpread
         Pattern p = Pattern.compile("value\">([^<]+)");
         Matcher m = p.matcher(html);
@@ -143,31 +141,7 @@ public class Game implements Serializable {
         }
     }
 
-    boolean isComplete() {
-        Pattern p = Pattern.compile("status\">([^<]+)");
-        Matcher m = p.matcher(html);
-        m.find();
-        status = m.group(1);
-
-        return m.group(1).equals("final");
-
-    }
-
-    @Override
-    public String toString() {
-        if (complete)
-            return homeName + "(" + homeSpread + homeSpreadRe + ") "
-                    + homeScore + homeScoreRe + "v" + awayScore + awayScoreRe + " "
-                    + awayName + "(" + awaySpread + awaySpreadRe + ")"
-                    + " (OU:" + overUnderSpread + "|" + totalScore + overUnderResult + ")"
-                    + " | Complete: " + complete + " | Status: " + status;
-        else return homeName + "(" + homeSpread + ") "
-                + "v " + awayName + "(" + awaySpread + ")"
-                + " (OU:" + overUnderSpread + ")"
-                + " | Complete: " + complete + " | Status: " + status;
-    }
-
-    String retNick(String homeCity) {
+    private String retNick(String homeCity) {
         switch (homeCity) {
             case "ARI" : return "Cardinals";
             case "ATL" : return "Falcons";
@@ -205,7 +179,75 @@ public class Game implements Serializable {
             case "WAS" : return "Redskins";
             default: throw new RuntimeException("Initials not recognized");
         }
+    }
 
+    public boolean isComplete() {
+        Pattern p = Pattern.compile("status\">([^<]+)");
+        Matcher m = p.matcher(html);
+        m.find();
+        status = m.group(1);
+
+        return m.group(1).equals("final");
+
+    }
+
+    // Getters
+    public String getHomeNick() {
+        return homeNick;
+    }
+
+    public String getAwayNick() {
+        return awayNick;
+    }
+
+    public int getSeason() {
+        return season;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public String getHomeInitials() {
+        return homeInitials;
+    }
+
+    public char getHomeSpreadRe() {
+        return homeSpreadRe;
+    }
+
+    public char getAwaySpreadRe() {
+        return awaySpreadRe;
+    }
+
+    public double getHomeSpread() {
+        return homeSpread;
+    }
+
+    public double getAwaySpread() {
+        return awaySpread;
+    }
+
+    public double getOverUnderSpread() {
+        return overUnderSpread;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public String toString() {
+        if (complete)
+            return homeName + "(" + homeSpread + homeSpreadRe + ") "
+                    + homeScore + homeScoreRe + "v" + awayScore + awayScoreRe + " "
+                    + awayName + "(" + awaySpread + awaySpreadRe + ")"
+                    + " (OU:" + overUnderSpread + "|" + totalScore + overUnderResult + ")"
+                    + " | Complete: " + complete + " | " + season + " " + type;
+        else return homeName + "(" + homeSpread + ") "
+                + "v " + awayName + "(" + awaySpread + ")"
+                + " (OU:" + overUnderSpread + ")"
+                + " | Complete: " + complete + " | Status: " + status + " " + type;
     }
 
     public static void main(String[] args) {

@@ -92,12 +92,10 @@ public class Scoreboard implements Serializable{
 
     // Needs testing
     boolean isComplete() {
-        boolean b = true;
         for (Game game : gameList) {
-            b = game.complete;
-            if (!b) break;
+            if (!game.isComplete()) return false;
         }
-        return b;
+        return true;
     }
 
     @Override

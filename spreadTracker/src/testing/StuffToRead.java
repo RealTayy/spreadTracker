@@ -8,3 +8,4 @@ public class StuffToRead implements Serializable {
         this.testInt = testInt;
     }
 }
+

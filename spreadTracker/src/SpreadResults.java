@@ -7,16 +7,15 @@ public class SpreadResults {
     File spreadData = new File("spread data");
 
     SpreadResults() {
-        updateSpread();
-        scraper.quit();
     }
 
-    void updateSpread() {
+    void updateFiles() {
         System.out.println("Updating spread data");
         createSpreadDataFolder();
         createSeasonFolders();
 
         System.out.println("Update Complete");
+        scraper.quit();
     }
 
     void createSpreadDataFolder() {
@@ -41,7 +40,6 @@ public class SpreadResults {
                 System.out.println("Creating \"/spread data/" + curSeason + "\"");
                 season.mkdir();
             }
-
             updateSeason(season);
         }
     }
@@ -55,36 +53,41 @@ public class SpreadResults {
                 FileInputStream fis = new FileInputStream(season + "\\" + i);
                 ObjectInputStream ois = new ObjectInputStream(fis);
 
-
-//                Scoreboard scoreboard = (Scoreboard) ois.readObject();
-//                if (!scoreboard.isComplete())
+                Scoreboard scoreboard = (Scoreboard) ois.readObject();
+                if (!scoreboard.isComplete()) {
+                    System.out.println(season.getName() + "\\" + i + " is not yet complete");
+                    createNewScoreboardFile(season, i);
+                }
 
                 fis.close();
                 ois.close();
             } catch (FileNotFoundException e) {
-                System.out.println(season.getName() + "\\" + i + " does not exist");
+                System.out.println(season.getName() + "\\" + i + " does not yet exist");
+                createNewScoreboardFile(season, i);
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
+        }
+    }
 
-            try {
-                FileOutputStream fos = new FileOutputStream(season + "\\" + i);
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
+    void createNewScoreboardFile (File season, int position) {
+        try {
+            FileOutputStream fos = new FileOutputStream(season + "\\" + position);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-                Scoreboard scoreboard = scraper.getScoreBoard(Integer.parseInt(season.getName()), i);
-                oos.writeObject(scoreboard);
+            Scoreboard scoreboard = scraper.getScoreBoard(Integer.parseInt(season.getName()), position);
+            oos.writeObject(scoreboard);
 
-                fos.close();
-                oos.close();
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+            fos.close();
+            oos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     int getSeasonYear(LocalDate date) {
         return (date.getMonthValue() < 9) ? date.getYear() - 1 : date.getYear();
     }
-
-
 }
