@@ -1,0 +1,11 @@
+Hi! This is my handy dandy spread tracker program!
+Here is some instructions on how to run...
+1. Before running make sure there is a folder called "\lib" in the same folder you have your spreadTracker.jar
+2. In that lib folder there should be a path to a chromedriver.exe like this "\lib\drivers\chromedriver\chromedriver.exe"
+3. If the chromedriver.exe is not there you program is just error out of itself without doing anything after a bit!
+4. Once you are sure that the chromedriver is in the correct location please run the .jar!
+5. Once you run the .jar file nothing should pop up for a while(especially if it's your first time running).
+6. What the program is doing is scraping Odds Shark's site and building a library
+7. You should see a folder called "\spread data" pop up in your folder that contains the .jar
+8. It'll start building a library taking live information from Odds Shark and usually takes around 3-5 minutes if it's your first time running
+9. Once it is finished the actualy program's GUI should pop up and you're ready to do!
