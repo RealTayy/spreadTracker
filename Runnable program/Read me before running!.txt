@@ -8,4 +8,4 @@ Here is some instructions on how to run...
 6. What the program is doing is scraping Odds Shark's site and building a library
 7. You should see a folder called "\spread data" pop up in your folder that contains the .jar
 8. It'll start building a library taking live information from Odds Shark and usually takes around 3-5 minutes if it's your first time running
-9. Once it is finished the actualy program's GUI should pop up and you're ready to do!
+9. Once it is finished the actual program's GUI should pop up and you're ready to do!
